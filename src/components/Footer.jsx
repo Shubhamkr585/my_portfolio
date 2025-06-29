@@ -1,22 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function Footer() {
+export default function Footer() {
   return (
-    <div >
-      <p className="text-white my-10 mb-0" style={{
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        textAlign: 'center',
-        padding: '10px',
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: '12px',
-        
-      }}> &copy;SHUBHAM</p>
-    </div>
-  )
+    <footer className="text-center py-6 bg-black text-gray-500">
+      &copy; 2025 Shubham Kumar. All rights reserved.
+    </footer>
+  );
 }
-
-export default Footer

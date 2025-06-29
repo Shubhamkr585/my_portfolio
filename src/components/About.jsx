@@ -1,37 +1,44 @@
-import React from 'react';
-import { Element } from 'react-scroll';
-import ProfileImage from './ProfileImage.jsx';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import shubham from '../assets/shubham.png';
 
 export default function About() {
+  const imageRef = useRef();
+  const textRef = useRef();
+
+  useEffect(() => {
+    gsap.fromTo(imageRef.current,
+      { rotationY: 90, opacity: 0, scale: 0.7 },
+      { rotationY: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power3.out' }
+    );
+    gsap.fromTo(textRef.current,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, delay: 0.6, duration: 0.8, ease: 'power2.out' }
+    );
+  }, []);
+
   return (
-    <Element className="about">
-      <div className="flex flex-col text-white my-3 mx-4">
-        <h1 className="text-center font-semibold heading my-2">ABOUT ME</h1>
-
-        <div className="flex flex-col md:flex-row items-start justify-between gap-6 mt-4">
-          {/* Text Section - 65% */}
-          <div className="w-full md:w-[65%]">
-            <p className="para my-2">
-              I'm a software engineer with a passion for technology and design. I am pursuing BTECH in computer science and engineering from Birla Institute of Technology, Mesra.
-
-            </p>
-            <p className="para my-2">
-              My main interests include web development, graphic design,android development and competitive programming.
-            </p>
-            <p className="para my-2">
-              I am a fast learner and a team player. I am always eager to learn new things and improve my skills.
-              I am currently working to improve the people reach to the healthcare and services.
-            </p>
-           
-          </div>
-
-          {/* Image Section - 35% */}
-          <div className="w-full md:w-[35%] flex justify-center md:justify-end mr-6">
-            <ProfileImage src={shubham} size={70} />
-          </div>
-        </div>
+    <section id="about" className="py-20 px-6 md:px-20 bg-gray-900 text-center">
+      <h2 className="text-5xl font-extrabold mb-10 text-gradient bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+        About Me
+      </h2>
+      <div className="flex flex-col items-center gap-8">
+        <img
+          ref={imageRef}
+          src={shubham}
+          alt="Shubham Kumar"
+          className="w-60 h-60 rounded-full object-cover shadow-lg"
+        />
+        <p
+          ref={textRef}
+          className="text-gray-300 text-lg max-w-2xl leading-relaxed"
+        >
+          👨‍💻 I'm a <span className="text-blue-400 font-semibold">full-stack developer</span> passionate about building scalable web applications,
+          solving challenging problems, and turning ideas into reality. <br />
+          🚀 With strong foundations in <span className="text-cyan-300 font-semibold">DSA</span> and experience in modern web tech,
+          I'm driven by impact and continuous growth.
+        </p>
       </div>
-    </Element>
+    </section>
   );
 }

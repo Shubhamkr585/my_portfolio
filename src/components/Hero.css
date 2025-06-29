@@ -1,0 +1,39 @@
+.fancy-title {
+  font-size: 5rem; /* Adjust size as needed */
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2), 4px 4px 0 rgba(0, 0, 0, 0.2);
+  transform: perspective(500px) rotateY(10deg);
+  transition: transform 0.3s;
+}
+
+.fancy-title:hover {
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.fancy-subtitle {
+  font-size: 2rem; /* Adjust size as needed */
+  color: #d1d5db; /* Gray-300 */
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  transform: perspective(500px) rotateY(5deg);
+  transition: transform 0.3s;
+}
+
+.fancy-subtitle:hover {
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.fancy-button {
+  background-color: #3b82f6; /* Blue-600 */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px; /* Full rounded */
+  font-size: 1.25rem; /* Adjust size as needed */
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.fancy-button:hover {
+  background-color: #2563eb; /* Blue-700 */
+  transform: translateY(-2px);
+}

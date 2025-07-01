@@ -20,7 +20,7 @@ A modern, animated, and responsive developer portfolio built with **React**, **T
 ## 🛠 Tech Stack
 
 - **Frontend**: React, Tailwind CSS
-- **Animation**: GSAP, Framer Motion (optional)
+- **Animation**: GSAP, Framer Motion 
 - **Icons**: React Icons
 - **Hosting**: Vercel
 
